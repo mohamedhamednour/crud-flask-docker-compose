@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    image: test-data
+    build: .
+    ports:
+      - "8001:8080"  # Map host port 8001 to container port 8080
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      - FLASK_ENV=development  # Enable Flask development environment
